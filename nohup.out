@@ -1,0 +1,8 @@
+[33mStarting up http-server, serving [39m[36m./[39m[33m on: [39m[36mhttp://0.0.0.0:8080[39m
+Hit CTRL-C to stop the server
+[31mhttp-server stopped.[39m
+[33mStarting up http-server, serving [39m[36m./[39m[33m on: [39m[36mhttp://0.0.0.0:8080[39m
+Hit CTRL-C to stop the server
+[Tue, 31 Mar 2015 21:08:37 GMT] "[36mGET[39m [36m/index.html[39m" "pa11y/1.6.3"
+[Tue, 31 Mar 2015 21:08:37 GMT] "[36mGET[39m [36m/styles/bootstrap-3.1.1.min.css[39m" "pa11y/1.6.3"
+[Tue, 31 Mar 2015 21:08:37 GMT] "[36mGET[39m [36m/styles/18f.min.css[39m" "pa11y/1.6.3"

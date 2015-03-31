@@ -3,4 +3,4 @@ before_install:
   - npm install http-server -g
 
 script:
-  - nohup http-server 8080 && pa11y localhost:8080/index.html
+  - nohup http-server -p 8080 & pa11y localhost:8080/index.html
