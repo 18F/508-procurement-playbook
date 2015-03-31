@@ -1,0 +1,6 @@
+before_install:
+  - npm install pa11y -g
+  - npm install http-server -g
+
+script:
+  - nohup http-server -p 8080 & pa11y localhost:8080/index.html
