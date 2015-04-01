@@ -9,30 +9,14 @@ MAX_PA11Y_WARNINGS=1000
 PA11Y_STANDARD='WCAG2AAA'  
 PAGES=('index.html')
 
-command_exists () { type "$1" &> /dev/null ; }
-
-# # Load nodejs dependencies if they aren't already installed
-if command_exists pa11y ;
+if [[ -z "$TRAVIS" ]];
 then
-  echo pa11y alread intstalled
+  echo
 else
-  sudo npm install -g pa11y
+  npm install -g pa11y
+  npm install -g http-server
+  npm install -g json
 fi
-
-if command_exists http-server ;
-then
-  echo http-server already installed
-else
-  sudo npm install -g http-server
-fi
-
-if command_exists json ;
-then
-  echo json already installed
-else
-  sudo npm install -g json
-fi
-echo
 
 # This lets us output colored text
 red=`tput setaf 1`
