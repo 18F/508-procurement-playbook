@@ -1,6 +1,14 @@
 before_install:
-  - npm install pa11y -g
-  - npm install http-server -g
+  - npm install -g pa11y
+  - npm install -g http-server
+  - npm install -g json
+
+env:
+  global:
+    - MAX_PA11Y_ERRORS=0
+    - MAX_PA11Y_NOTICES=1000
+    - MAX_PA11Y_WARNINGS=1000
+    - PA11Y_STANDARD="WCAG2AAA"
 
 script:
-  - nohup http-server -p 8080 & pa11y localhost:8080/index.html
+  - ./script/cibuild.sh
