@@ -1,6 +1,7 @@
 before_install:
-  - npm install pa11y -g
-  - npm install http-server -g
+  - npm install -g pa11y
+  - npm install -g http-server
+  - npm install -g json
 
 script:
   - ./script/cibuild.sh
