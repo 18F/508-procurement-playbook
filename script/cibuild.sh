@@ -18,7 +18,7 @@ fail=false
 
 if [ "$error_count" -le "$MAX_PA11Y_ERRORS" ]
 then
-  echo "$PA11Y_STANDARD errors passed"
+  echo "$PA11Y_STANDARD errors passed. Threshold: $MAX_PA11Y_ERRORS"
 else
   echo "$PA11Y_STANDARD errors failed: expected $MAX_PA11Y_ERRORS errors, got $error_count"
   fail=true
@@ -26,7 +26,7 @@ fi
 
 if [ "$warning_count" -le "$MAX_PA11Y_WARNINGS" ]
 then
-  echo "$PA11Y_STANDARD warnings passed"
+  echo "$PA11Y_STANDARD warnings passed Threshold: $MAX_PA11Y_WARNINGS"
 else
   echo "$PA11Y_STANDARD warnings failed: expected $MAX_PA11Y_WARNINGS warnings, got $warning_count"
   fail=true
@@ -34,7 +34,7 @@ fi
 
 if [ "$notice_count" -le "$MAX_PA11Y_NOTICES" ]
 then
-  echo "$PA11Y_STANDARD notices passed"
+  echo "$PA11Y_STANDARD notices passed Threshold: $MAX_PA11Y_NOTICES"
 else
   echo "$PA11Y_STANDARD notices failed: expected $MAX_PA11Y_NOTICES notices, got $notice_count"
   fail=true
