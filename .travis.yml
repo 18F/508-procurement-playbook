@@ -3,5 +3,12 @@ before_install:
   - npm install -g http-server
   - npm install -g json
 
+env:
+  global:
+    - MAX_PA11Y_ERRORS=0
+    - MAX_PA11Y_NOTICES=0
+    - MAX_PA11Y_WARNINGS=0
+    - PA11Y_STANDARD="WCAG2AAA"
+
 script:
   - ./script/cibuild.sh

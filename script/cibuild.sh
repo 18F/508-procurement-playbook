@@ -1,10 +1,10 @@
-MAX_ERRORS=0
-MAX_WARNINGS=10
-MAX_NOTICES=1000
-STANDARD="WCAG2AAA"
+# MAX_ERRORS=0
+# MAX_WARNINGS=10
+# MAX_NOTICES=1000
+# STANDARD="WCAG2AAA"
 
 nohup http-server -p 8080 >/dev/null 2>&1 &
-pa11y -s $STANDARD -r json localhost:8080/index.html > pa11y.json
+pa11y -s $PA11Y_STANDARD -r json localhost:8080/index.html > pa11y.json
 
 function count_type () {
   cat pa11y.json | json count.$1
@@ -16,27 +16,27 @@ notice_count=`count_type "notice"`
 
 fail=false
 
-if [ "$error_count" -le "$MAX_ERRORS" ]
+if [ "$error_count" -le "$MAX_PA11Y_ERRORS" ]
 then
-  echo "$STANDARD errors passed"
+  echo "$PA11Y_STANDARD errors passed"
 else
-  echo "$STANDARD errors failed: expected $MAX_ERRORS errors, got $error_count"
+  echo "$PA11Y_STANDARD errors failed: expected $MAX_PA11Y_ERRORS errors, got $error_count"
   fail=true
 fi
 
-if [ "$warning_count" -le "$MAX_WARNINGS" ]
+if [ "$warning_count" -le "$MAX_PA11Y_WARNINGS" ]
 then
-  echo "$STANDARD warnings passed"
+  echo "$PA11Y_STANDARD warnings passed"
 else
-  echo "$STANDARD warnings failed: expected $MAX_WARNINGS warnings, got $warning_count"
+  echo "$PA11Y_STANDARD warnings failed: expected $MAX_PA11Y_WARNINGS warnings, got $warning_count"
   fail=true
 fi
 
-if [ "$notice_count" -le "$MAX_NOTICES" ]
+if [ "$notice_count" -le "$MAX_PA11Y_NOTICES" ]
 then
-  echo "$STANDARD notices passed"
+  echo "$PA11Y_STANDARD notices passed"
 else
-  echo "$STANDARD notices failed: expected $MAX_NOTICES notices, got $notice_count"
+  echo "$PA11Y_STANDARD notices failed: expected $MAX_PA11Y_NOTICES notices, got $notice_count"
   fail=true
 fi
 
