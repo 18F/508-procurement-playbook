@@ -3,4 +3,4 @@ before_install:
   - npm install http-server -g
 
 script:
-  - .script/cibuild.sh
+  - ./script/cibuild.sh
