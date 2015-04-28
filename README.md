@@ -1,15 +1,6 @@
-# Create an 18F-branded microsite by forking this site.
+# Local BuyAccessible version of the 18F draft 508-procurement-playbook
 
-Basic instructions:
-* Fork this site.
-* Rename it.
-* Add specific content, especially to index.html.
-* Change this README.md!
-
-This repo  is meant to cloned.  This micro-site template is used to
-automatically create new microsites which can be easily customized.
-If you are the owner if this README, you have probably already cloned
-it and should replace it with something far more specific.
+Provides content to enhance the playbook with guidance on tools and resources to help accomplish the documented plays.
 
 ### Public domain
 
